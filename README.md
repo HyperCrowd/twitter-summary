@@ -6,7 +6,18 @@ Easily sets up TypeScript server-side projects that are StackBlitz compliant. Co
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/hypercrowd/typescript-server-template)
 
-`npm i -S @psysecgroup/typescript-server-template` or `yarn add @psysecgroup/typescript-server-template`
+```bash
+git clone https://github.com/PsySecGroup/typescript-server-template.git <projectName>
+cd <projectName>
+rm -fr .git
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/<yourGithubName>/<projectName>.git
+git push -u origin main
+yarn install
+```
 
 ## Testing
 
