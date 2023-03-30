@@ -26,7 +26,7 @@ let prompt = `Using a list of words where the number after the comma is how freq
 
 `;
 
-const alphanumOnly = /[^a-z0-9]/g;
+const alphanumOnly = /[^a-z\-]/g;
 
 /**
  *
