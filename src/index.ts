@@ -3,6 +3,7 @@ import { open } from 'node:fs/promises';
 import * as pe from 'post-entity';
 
 const file = process.argv[2] || '';
+const filter = parseInt(process.argv[3] || '5');
 
 if (file === '') {
   throw new RangeError();
@@ -66,7 +67,7 @@ async function main() {
       const keys = Object.keys(tokens);
 
       for (const key of keys) {
-        if (tokens[key] === 1) {
+        if (tokens[key] < filter) {
           continue;
         }
         prompt += `${key}:${tokens[key]} `;
