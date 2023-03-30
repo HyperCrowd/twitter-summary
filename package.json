@@ -1,5 +1,5 @@
 {
-  "name": "HyperCrowd/twitter-summary",
+  "name": "twitter-summary",
   "description": "Easily sets up TypeScript server-side projects that are StackBlitz compliant.",
   "version": "1.0.0",
   "author": "The PsySec Group",
@@ -45,6 +45,8 @@
   },
   "dependencies": {
     "commander": "^9.3.0",
+    "csv-stream": "^0.2.0",
+    "post-entity": "^0.0.2",
     "ts-node": "^10.8.1"
   }
 }

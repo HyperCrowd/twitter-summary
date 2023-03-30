@@ -1,0 +1,5 @@
+import*as c from"csv-stream";import{open as p}from"node:fs/promises";import*as i from"post-entity";var f=process.argv[2]||"tests/test.csv";if(f==="")throw new RangeError;var e={},l={delimiter:"	",endLine:`
+`,columnOffset:0,escapeChar:'"',enclosedChar:'"'},u=c.createStream(l),r=`Using a list of words where the number after the comma is how frequently the word is used, please summarize the personality, interests, fears, and hopes of the person using these words from the list (and account for frequency): 
+
+`;async function d(){(await p(f,"r")).createReadStream().pipe(u).on("data",function(t){if(t.retweet!=="False"||t.language!=="en")return;let o=i.process(t.tweet).filter(s=>s.type==="text").map(s=>s.raw.trim());for(let s of o){let a=s.split(" ");for(let m of a){let n=m.trim();n!==""&&(e[n]===void 0&&(e[n]=0),e[n]+=1)}}}).on("close",function(){let t=Object.keys(e);for(let o of t)e[o]!==1&&(r+=`${o}:${e[o]} `);console.log(r)})}d();
+//# sourceMappingURL=index.js.map

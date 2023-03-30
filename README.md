@@ -1,29 +1,18 @@
-# TypeScript Server Template
+# Twitter Summary
 
-Easily sets up TypeScript server-side projects that are StackBlitz compliant. Comes with everything needed for easy TypeScript usage and has CommanderJS.
+Scrapes a twitter feed, gets word frequency, then generates a ChatGPT prompt to get the users psychology.
 
 ## Install
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/hypercrowd/twitter-summary)
-
-```bash
-git clone https://github.com/HyperCrowd/twitter-summary.git <projectName>
-cd <projectName>
-rm -fr .git
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/<yourGithubName>/<projectName>.git
-git push -u origin main
-yarn install
-```
 
 ## Testing
 
 Add your tests to the [`tests`](tests) folder, then import them in the [`tests/index.ts`](tests/index.ts) file.
 
 ## CLI
+
+`node ./dist/index.js <filepath_To_Twint_Csv>`
 
 ### npm
 
