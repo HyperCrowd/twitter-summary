@@ -1,6 +1,7 @@
 import * as csv from 'csv-stream';
 import { open } from 'node:fs/promises';
 import * as pe from 'post-entity';
+import { removeStopwords } from 'stopword';
 
 const file = process.argv[2] || '';
 const filter = parseInt(process.argv[3] || '5');
@@ -25,6 +26,8 @@ let prompt = `Using a list of words where the number after the comma is how freq
 
 `;
 
+const alphanumOnly = /[^a-z0-9]/g;
+
 /**
  *
  */
@@ -43,16 +46,18 @@ async function main() {
       if (data.language !== 'en') {
         return;
       }
+      const tweet = data.tweet.toLowerCase();
 
       const text = pe
-        .process(data.tweet)
+        .process(tweet)
         .filter((tweet) => tweet.type === 'text')
         .map((tweet) => tweet.raw.trim());
 
       for (const words of text) {
-        const split = words.split(' ');
+        const split = removeStopwords(words.split(' '));
         for (const element of split) {
-          const token = element.trim();
+          const token = element.trim().replace(alphanumOnly, '');
+          console.log(token);
           if (token !== '') {
             if (tokens[token] === undefined) {
               tokens[token] = 0;

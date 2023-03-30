@@ -47,6 +47,7 @@
     "commander": "^9.3.0",
     "csv-stream": "^0.2.0",
     "post-entity": "^0.0.2",
+    "stopword": "^2.0.8",
     "ts-node": "^10.8.1"
   }
 }
