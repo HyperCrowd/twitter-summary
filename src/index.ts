@@ -57,7 +57,7 @@ async function main() {
         const split = removeStopwords(words.split(' '));
         for (const element of split) {
           const token = element.trim().replace(alphanumOnly, '');
-          console.log(token);
+
           if (token !== '') {
             if (tokens[token] === undefined) {
               tokens[token] = 0;
