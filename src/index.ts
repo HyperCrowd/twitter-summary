@@ -22,7 +22,7 @@ const options = {
 
 const csvStream = csv.createStream(options);
 
-let prompt = `Using a list of words where the number after the comma is how frequently the word is used, critically summarize (without using any positive terminology) the personality, interests, fears, and hopes of the person using these words from the list (and account for frequency): 
+let prompt = `Using a list of words where the number after the comma is how frequently the word is used, give a detailed and critical summary (without using any positive terminology) about the personality, interests, fears, and hopes of the person using these words from the list (and account for frequency): 
 
 `;
 
