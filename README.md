@@ -4,10 +4,10 @@ Easily sets up TypeScript server-side projects that are StackBlitz compliant. Co
 
 ## Install
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/hypercrowd/typescript-server-template)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/hypercrowd/twitter-summary)
 
 ```bash
-git clone https://github.com/PsySecGroup/typescript-server-template.git <projectName>
+git clone https://github.com/HyperCrowd/twitter-summary.git <projectName>
 cd <projectName>
 rm -fr .git
 git init
